@@ -1,0 +1,23 @@
+{
+  "name": "recipe-world",
+  "version": "1.0.0",
+  "description": "fullstack recipe share app",
+  "main": "back-end/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuHaoChen1997/recipe-world.git"
+  },
+  "keywords": [
+    "recipe",
+    "review"
+  ],
+  "author": "JuHao Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuHaoChen1997/recipe-world/issues"
+  },
+  "homepage": "https://github.com/JuHaoChen1997/recipe-world#readme"
+}
