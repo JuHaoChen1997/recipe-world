@@ -16,5 +16,8 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to recipe world!");
 });
 
+//routes of recipes
+app.use("/recipes", recipeController);
+
 //Export
 module.exports = app;
