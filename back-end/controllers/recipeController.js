@@ -4,6 +4,7 @@ const {
   getAllRecipes,
   getOneRecipe,
   postNewRecipe,
+  updateTheRecipe,
 } = require("../queries/recipes");
 
 //sub routes
@@ -44,6 +45,20 @@ recipeController.post("/", async (req, res) => {
   try {
     const postedRecipe = await postNewRecipe(newRecipe);
     res.status(200).json({ success: true, payload: postedRecipe[0] });
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({ success: false });
+  }
+});
+
+//edit route
+//edit a recipe inside the database
+recipeController.put("/:recipeId", async (req, res) => {
+  const { recipeId } = req.params;
+
+  try {
+    const updatedRecipe = await updateTheRecipe(req.body, recipeId);
+    res.status(200).json({ success: true, payload: updatedRecipe });
   } catch (error) {
     console.log(error);
     res.status(404).json({ success: false });
