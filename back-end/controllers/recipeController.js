@@ -1,6 +1,10 @@
 //dependencies
 const express = require("express");
-const { getAllRecipes, getOneRecipe } = require("../queries/recipes");
+const {
+  getAllRecipes,
+  getOneRecipe,
+  postNewRecipe,
+} = require("../queries/recipes");
 
 //sub routes
 const recipeController = express.Router();
@@ -31,5 +35,19 @@ recipeController.get("/:recipeId", async (req, res) => {
 });
 //show route
 //get and individual recipe with given id
+
+//new route
+//add a recipe into the database
+recipeController.post("/", async (req, res) => {
+  const newRecipe = req.body;
+
+  try {
+    const postedRecipe = await postNewRecipe(newRecipe);
+    res.status(200).json({ success: true, payload: postedRecipe[0] });
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({ success: false });
+  }
+});
 
 module.exports = recipeController;
