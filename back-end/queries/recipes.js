@@ -5,7 +5,6 @@ const db = require("../db/dbConfig.js");
 const getAllRecipes = async () => {
   try {
     const allRecipes = await db.any("SELECT * FROM recipes");
-    console.log("hello", allRecipes);
     return allRecipes;
   } catch (error) {
     console.log(error.message || error);
@@ -13,4 +12,19 @@ const getAllRecipes = async () => {
   }
 };
 
-module.exports = { getAllRecipes };
+//get one recipe with given id
+const getOneRecipe = async (recipeId) => {
+  try {
+    const returnedRecipe = await db.one(
+      "SELECT * FROM recipes WHERE recipe_id=$1",
+      recipeId
+    );
+    console.log(returnedRecipe);
+    return returnedRecipe;
+  } catch (error) {
+    console.log(error.message || error);
+    return error;
+  }
+};
+
+module.exports = { getAllRecipes, getOneRecipe };
