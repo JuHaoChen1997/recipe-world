@@ -5,6 +5,7 @@ const {
   getOneRecipe,
   postNewRecipe,
   updateTheRecipe,
+  deleteRecipe,
 } = require("../queries/recipes");
 
 //sub routes
@@ -62,6 +63,19 @@ recipeController.put("/:recipeId", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(404).json({ success: false });
+  }
+});
+
+//delete route
+//delete individual recipe with given id
+recipeController.delete("/:recipeId", async (req, res) => {
+  const { recipeId } = req.params;
+
+  try {
+    const deletedRecipe = await deleteRecipe(recipeId);
+    res.status(200).json({ success: true, payload: deletedRecipe });
+  } catch (error) {
+    res.status(404).json({ success: false, payload: { id: undefined } });
   }
 });
 

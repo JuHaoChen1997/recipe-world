@@ -92,9 +92,24 @@ const updateTheRecipe = async (recipe, recipeId) => {
   }
 };
 
+//delete an individual recipe with given id
+const deleteRecipe = async (recipeId) => {
+  try {
+    const deletedRecipe = db.one(
+      "DELETE FROM recipes WHERE recipe_id=$1 RETURNING *",
+      recipeId
+    );
+    return deletedRecipe;
+  } catch (error) {
+    console.log(error.message || error);
+    return error;
+  }
+};
+
 module.exports = {
   getAllRecipes,
   getOneRecipe,
   postNewRecipe,
   updateTheRecipe,
+  deleteRecipe,
 };
