@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Show from "./pages/Show";
 import New from "./pages/New";
+import Edit from "./pages/Edit";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/recipes" element={<Index />} />
         <Route path="/recipes/:recipeId" element={<Show />} />
         <Route path="/recipes/new" element={<New />} />
+        <Route path="/recipes/:recipeId/edit" element={<Edit />} />
       </Routes>
     </div>
   );
