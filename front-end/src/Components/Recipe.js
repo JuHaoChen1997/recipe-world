@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 function Recipe(props) {
   const {
+    recipe_id,
     recipe_name,
     time_to_prepare,
     time_to_cook,
@@ -13,7 +14,9 @@ function Recipe(props) {
 
   return (
     <div>
-      <h2>{recipe_name}</h2>
+      <Link to={`/recipes/${recipe_id}`}>
+        <h2>{recipe_name}</h2>
+      </Link>
     </div>
   );
 }
