@@ -8,6 +8,8 @@ CREATE DATABASE recipe_world;
 \c recipe_world; 
 
 --step 4 create the tables
+--create the recipes table
+DROP TABLE IF EXISTS recipes;
 CREATE TABLE recipes (
     recipe_id SERIAL PRIMARY KEY,
     recipe_name TEXT NOT NULL,
@@ -17,4 +19,16 @@ CREATE TABLE recipes (
     picture_link TEXT,
     ingredients TEXT,
     directions TEXT
+);
+
+--create the reveiws table
+DROP TABLE IF EXISTS reviews;
+CREATE TABLE reviews(
+    review_id SERIAL PRIMARY KEY,
+    reviewer TEXT,
+    content TEXT,
+    rating NUMERIC,
+    CHECK (rating >= 0 AND rating <= 5),
+    id_of_recipe INTEGER REFERENCES recipes (recipe_id)
+    ON DELETE CASCADE
 )

@@ -8,14 +8,18 @@ const {
   deleteRecipe,
 } = require("../queries/recipes");
 
+const reviewsController = require("./reviewsController");
+
 //sub routes
 const recipeController = express.Router();
 
 //index route
 //show all recipes
 recipeController.get("/", async (req, res) => {
+  const { recipeId } = req.params;
+
   try {
-    const allRecipes = await getAllRecipes();
+    const allRecipes = await getAllRecipes(recipeId);
     res.status(200).json({ success: true, payload: allRecipes });
   } catch (error) {
     res.status(404).json({ sucess: false });
@@ -78,5 +82,8 @@ recipeController.delete("/:recipeId", async (req, res) => {
     res.status(404).json({ success: false, payload: { id: undefined } });
   }
 });
+
+//nested reviews route
+recipeController.use("/:recipeId/reviews", reviewsController);
 
 module.exports = recipeController;
