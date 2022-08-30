@@ -39,8 +39,6 @@ recipeController.get("/:recipeId", async (req, res) => {
     res.status(404).json({ success: false });
   }
 });
-//show route
-//get and individual recipe with given id
 
 //new route
 //add a recipe into the database
