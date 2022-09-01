@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Container from "@mui/material/Container";
 
 //import routes
 import Nav from "./Components/Nav";
@@ -13,14 +14,16 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/recipes" element={<Index />} />
-        <Route path="/recipes/new" element={<New />} />
-        <Route path="/recipes/:recipeId" element={<Show />} />
-        <Route path="/recipes/:recipeId/edit" element={<Edit />} />
-        <Route path="*" element={<FourOFour />} />
-      </Routes>
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Index />} />
+          <Route path="/recipes/new" element={<New />} />
+          <Route path="/recipes/:recipeId" element={<Show />} />
+          <Route path="/recipes/:recipeId/edit" element={<Edit />} />
+          <Route path="*" element={<FourOFour />} />
+        </Routes>
+      </Container>
     </div>
   );
 }
