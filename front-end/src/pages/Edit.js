@@ -3,7 +3,7 @@ import RecipeEditForm from "../Components/RecipeEditForm";
 function Edit() {
   return (
     <div>
-      <h2>Edit</h2>
+      <h2>Edit Recipe</h2>
       <RecipeEditForm />
     </div>
   );

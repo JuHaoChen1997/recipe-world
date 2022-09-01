@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 //API url
 const API = process.env.REACT_APP_API_URL;
@@ -51,7 +53,7 @@ function RecipeEditForm() {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <div>
           <label htmlFor="recipe_name">Name: </label>
           <input
@@ -109,31 +111,39 @@ function RecipeEditForm() {
         <br />
         <div>
           <label htmlFor="ingredients">Ingredients: </label>
-          <input
+          <textarea
             id="ingredients"
             value={recipe.ingredients}
             type="text"
             onChange={handleTextChange}
             required
-          ></input>
+          />
         </div>
         <br />
         <div>
           <label htmlFor="directions">Directions: </label>
-          <input
+          <textarea
             id="directions"
             value={recipe.directions}
             type="text"
             onChange={handleTextChange}
             required
-          ></input>
+          />
         </div>
         <br />
-        <input type="submit" value="Edit Recipe" />
+        <Box marginTop={2} marginBottom={2}>
+          <Button variant="contained">
+            <input type="submit" value="Edit Recipe" />
+          </Button>
+        </Box>
       </form>
-      <button type="button">
-        <Link to="/recipes">Back</Link>
-      </button>
+      <Box marginTop={2} marginBottom={2}>
+        <Button variant="contained">
+          {" "}
+          <Link to="/recipes">Back</Link>
+        </Button>
+        <hr />
+      </Box>
     </section>
   );
 }
