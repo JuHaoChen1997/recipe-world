@@ -1,4 +1,4 @@
-\c da1i55ng3boheo  --we'll need to lookup our heroku pg database name to connect to here
+\c da1i55ng3boheo;  --we'll need to lookup our heroku pg database name to connect to here
 
 -- create the tables
 DROP TABLE IF EXISTS recipes;
