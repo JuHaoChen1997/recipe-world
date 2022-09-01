@@ -1,0 +1,19 @@
+.reviewSection{
+    margin: 10px;
+}
+
+.newReview{
+    padding-left:20px;
+}
+
+hr{
+    margin-top: 20px;
+}
+
+input {
+    height: 30px;
+}
+
+textarea{
+    margin-top: 10px;
+}

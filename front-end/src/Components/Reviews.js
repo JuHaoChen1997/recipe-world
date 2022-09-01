@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Review from "./Review";
 import ReviewForm from "./ReviewForm";
+import "./Reviews.css";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -15,7 +16,7 @@ function Reviews() {
       console.log(response.data);
       setReviews(response.data);
     });
-  }, [recipeId, API]);
+  }, [recipeId]);
 
   const handleAdd = (newReview) => {
     axios
@@ -65,10 +66,13 @@ function Reviews() {
 
   return (
     <section>
-      <h2>Reviews</h2>
-      <ReviewForm handleSubmit={handleAdd}>
-        <h3>Add a New Review</h3>
-      </ReviewForm>
+      <hr />
+      <h2 className="reviewSection">Reviews</h2>
+      <div className="newReview">
+        <ReviewForm handleSubmit={handleAdd}>
+          <h3>Add a New Review</h3>
+        </ReviewForm>
+      </div>
       {reviews.map((review, index) => (
         <Review
           key={index}
