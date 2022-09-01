@@ -20,6 +20,15 @@ function RecipeDetails() {
       .catch((error) => console.error("catch", error));
   }, [recipeId]);
 
+  const handleDelete = () => {
+    axios
+      .delete(`${API}/recipes/${recipeId}`)
+      .then((response) => {
+        navigate("/recipes");
+      })
+      .catch((error) => console.error("catch", error));
+  };
+
   return (
     <section>
       <div>
@@ -34,6 +43,9 @@ function RecipeDetails() {
           <Link to={`/recipes/${recipeId}/edit`}>Edit</Link>
         </button>
       </div>
+
+      <button onClick={handleDelete}>Delete</button>
+
       <section>
         <Reviews />
       </section>

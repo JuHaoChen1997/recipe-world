@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
 import "./Recipe.css";
 
 function Recipe(props) {
@@ -11,12 +13,18 @@ function Recipe(props) {
   } = props.data;
 
   return (
-    <div>
-      <Link to={`/recipes/${recipe_id}`}>
-        <img src={picture_link} alt={`${recipe_name}`} className="recipeImg" />
-        <h3>{recipe_name}</h3>
-      </Link>
-    </div>
+    <Grid item xs={3}>
+      <Paper elevation={3}>
+        <Link to={`/recipes/${recipe_id}`}>
+          <img
+            src={picture_link}
+            alt={`${recipe_name}`}
+            className="recipeImg"
+          />
+          <h3>{recipe_name}</h3>
+        </Link>
+      </Paper>
+    </Grid>
   );
 }
 
