@@ -5,4 +5,4 @@ INSERT INTO recipes (recipe_name,time_to_prepare,time_to_cook,author,picture_lin
 --reviews
 INSERT INTO reviews (id_of_recipe,reviewer,content,rating)
 VALUES
-('1','Evan','I like this recipe',5),('1','Evan 123','I like this recipe',5),('2','Alan','I like this recipe',5);
+('1','Evan','I like this recipe',5),('1','Evan 123','I like this recipe',5);
