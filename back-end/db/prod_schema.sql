@@ -12,16 +12,17 @@ CREATE TABLE recipes (
     picture_link TEXT,
     ingredients TEXT,
     directions TEXT
-)
+);
 
---create the reveiws table
--- DROP TABLE IF EXISTS reviews;
--- CREATE TABLE reviews(
---     review_id SERIAL PRIMARY KEY,
---     reviewer TEXT,
---     content TEXT,
---     rating NUMERIC,
---     CHECK (rating >= 0 AND rating <= 5),
---     id_of_recipe INTEGER REFERENCES recipes (recipe_id)
---     ON DELETE CASCADE
--- )
+-- create the reveiws table
+DROP TABLE IF EXISTS reviews;
+
+CREATE TABLE reviews(
+    review_id SERIAL PRIMARY KEY,
+    reviewer TEXT,
+    content TEXT,
+    rating NUMERIC,
+    CHECK (rating >= 0 AND rating <= 5),
+    id_of_recipe INTEGER REFERENCES recipes (recipe_id)
+    ON DELETE CASCADE
+);
