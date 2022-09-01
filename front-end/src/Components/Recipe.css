@@ -1,4 +1,9 @@
 .recipeImg{
-    width:280px;
-    height:320px;
+    width:100%;
+    height:8rem;
+}
+
+a {
+    all:unset;
+    text-decoration: none;
 }
