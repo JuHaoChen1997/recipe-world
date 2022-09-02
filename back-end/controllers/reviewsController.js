@@ -18,10 +18,14 @@ reviews.get("/", async (req, res) => {
   const { recipeId } = req.params;
 
   const allReviews = await getAllReviews(recipeId);
-  if (allReviews[0]) {
-    res.status(200).json(allReviews);
-  } else {
-    res.status(500).json({ error: "server error" });
+  try {
+    if (allReviews[0]) {
+      res.status(200).json(allReviews);
+    } else {
+      res.status(200).json([{}]);
+    }
+  } catch (error) {
+    res.status(404).json({ sucess: false });
   }
 });
 

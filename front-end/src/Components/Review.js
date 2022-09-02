@@ -2,8 +2,8 @@ import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
 
 function Review({ review, handleDelete, handleSubmit }) {
   const [viewEditForm, toggleEditForm] = useState(false);
@@ -23,9 +23,13 @@ function Review({ review, handleDelete, handleSubmit }) {
           />
         ) : (
           <div>
-            <h4>
-              {review.reviewer} <span>{review.rating}</span>
-            </h4>
+            <h4>{review.reviewer}</h4>
+            <Rating
+              name="read-only"
+              value={Number(review.rating)}
+              readOnly
+              size="small"
+            />
             <p>{review.content}</p>
           </div>
         )}

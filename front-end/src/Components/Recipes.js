@@ -5,7 +5,6 @@ import Grid from "@mui/material/Grid";
 
 //get the API url
 const API = process.env.REACT_APP_API_URL;
-console.log("API is", API);
 
 function Recipes() {
   const [recipes, setRecipes] = useState([]);

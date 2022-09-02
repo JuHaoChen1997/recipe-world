@@ -43,12 +43,6 @@ function Recipe(props) {
               </Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }} marginTop={3}>
-              {/* <Rating
-                name="read-only"
-                value={Number(4.5)}
-                readOnly
-                size="small"
-              /> */}
               <Typography variant="h6" component="h3" marginTop={0}>
                 Author: {author}
               </Typography>
