@@ -22,7 +22,7 @@ reviews.get("/", async (req, res) => {
     if (allReviews[0]) {
       res.status(200).json(allReviews);
     } else {
-      res.status(200).json([{}]);
+      res.status(200).json([]);
     }
   } catch (error) {
     res.status(404).json({ sucess: false });
