@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Show from "./pages/Show";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
+import ContactDeveloper from "./pages/ContactDeveloper";
 import FourOFour from "./pages/FourOFour";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/recipes/new" element={<New />} />
           <Route path="/recipes/:recipeId" element={<Show />} />
           <Route path="/recipes/:recipeId/edit" element={<Edit />} />
+          <Route path="/contact" element={<ContactDeveloper />} />
           <Route path="*" element={<FourOFour />} />
         </Routes>
       </Container>

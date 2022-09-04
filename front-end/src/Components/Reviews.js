@@ -73,14 +73,16 @@ function Reviews() {
           <h3>Add a New Review</h3>
         </ReviewForm>
       </div>
-      {reviews.map((review, index) => (
-        <Review
-          key={index}
-          review={review}
-          handleSubmit={handleEdit}
-          handleDelete={handleDelete}
-        />
-      ))}
+      {reviews.length > 0
+        ? reviews.map((review, index) => (
+            <Review
+              key={index}
+              review={review}
+              handleSubmit={handleEdit}
+              handleDelete={handleDelete}
+            />
+          ))
+        : null}
     </section>
   );
 }

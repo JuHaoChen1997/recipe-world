@@ -114,6 +114,13 @@ const Nav = () => {
                   </Link>
                 </Typography>
               </MenuItem>
+              <MenuItem key={"Contact Developer"} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">
+                  <Link to="/contact" className="contact">
+                    Contact Developer
+                  </Link>
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -170,6 +177,15 @@ const Nav = () => {
             >
               <Link to="/recipes/new" className="newPage">
                 New Recipe
+              </Link>
+            </Button>
+            <Button
+              key={"Contact Developer"}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/contact" className="contact">
+                Contact Developer
               </Link>
             </Button>
           </Box>
