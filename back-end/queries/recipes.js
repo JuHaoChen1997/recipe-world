@@ -19,7 +19,6 @@ const getOneRecipe = async (recipeId) => {
       "SELECT * FROM recipes WHERE recipe_id=$1",
       recipeId
     );
-    console.log(returnedRecipe);
     return returnedRecipe;
   } catch (error) {
     console.log(error.message || error);

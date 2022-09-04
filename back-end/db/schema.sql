@@ -15,7 +15,7 @@ CREATE TABLE recipes (
     recipe_name TEXT NOT NULL,
     time_to_prepare INT,
     time_to_cook INT,
-    author TEXT,
+    author CHAR(100),
     picture_link TEXT,
     ingredients TEXT,
     directions TEXT
