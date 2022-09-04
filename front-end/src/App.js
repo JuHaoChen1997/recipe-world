@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Container from "@mui/material/Container";
+import "./App.css";
 
 //import routes
 import Nav from "./Components/Nav";

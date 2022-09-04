@@ -27,6 +27,17 @@ function Home() {
 
   return (
     <div>
+      <div className="tutorial">
+        <a
+          href="https://docs.google.com/document/d/1XOvagMfdJ6g7poTh2oZ2k5fm9O9CDStKdwK-eLDoCZg/edit?usp=sharing"
+          target="_blank"
+        >
+          <img
+            src="https://www.gssd.ca/school/dlc/Lists/FeaturedImageLinks/Attachments/6/tutorial.jpg"
+            alt="tutorial"
+          />
+        </a>
+      </div>
       <img src="https://i.imgur.com/U7afLiO.png" id="img" height="200px" />
       <br />
       <input type="file" id="file" onChange={handleImgChange} />
