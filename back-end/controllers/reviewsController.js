@@ -33,10 +33,11 @@ reviews.get("/", async (req, res) => {
 reviews.get("/:id", async (req, res) => {
   const { id } = req.params;
   const review = await getReview(id);
-  if (review) {
+  console.log(review);
+  if (review.received !== 0) {
     res.json(review);
   } else {
-    res.status(404).json({ error: "not found" });
+    res.status(404).json({ error: "not found review with given id" });
   }
 });
 
