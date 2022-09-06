@@ -22,7 +22,7 @@ recipeController.get("/", async (req, res) => {
     const allRecipes = await getAllRecipes(recipeId);
     res.status(200).json({ success: true, payload: allRecipes });
   } catch (error) {
-    res.status(404).json({ sucess: false });
+    res.status(404).json({ sucess: false, message: "no recipes" });
   }
 });
 
@@ -36,7 +36,9 @@ recipeController.get("/:recipeId", async (req, res) => {
 
     res.status(200).json({ success: true, payload: returnedRecipe });
   } catch (error) {
-    res.status(404).json({ success: false });
+    res
+      .status(404)
+      .json({ success: false, message: "Recipe with given id not found" });
   }
 });
 
@@ -50,7 +52,7 @@ recipeController.post("/", async (req, res) => {
     res.status(200).json({ success: true, payload: postedRecipe[0] });
   } catch (error) {
     console.log(error);
-    res.status(404).json({ success: false });
+    res.status(404).json({ success: false, message: "cannot add new recipe" });
   }
 });
 

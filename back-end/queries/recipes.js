@@ -7,8 +7,8 @@ const getAllRecipes = async () => {
     const allRecipes = await db.any("SELECT * FROM recipes");
     return allRecipes;
   } catch (error) {
-    console.log(error.message || error);
-    return error;
+    // console.log(error.message || error);
+    res.status(404).json({ sucess: false, message: "no recipes" });
   }
 };
 
@@ -21,8 +21,11 @@ const getOneRecipe = async (recipeId) => {
     );
     return returnedRecipe;
   } catch (error) {
-    console.log(error.message || error);
-    return error;
+    // console.log(error.message || error);
+    res.status(404).json({
+      success: false,
+      message: `Recipe with given id not found`,
+    });
   }
 };
 
@@ -53,8 +56,8 @@ const postNewRecipe = async (recipe) => {
     );
     return newRecipe;
   } catch (error) {
-    console.log(error.message || error);
-    return error;
+    //console.log(error.message || error);
+    res.status(404).json({ success: false, message: "cannot add new recipe" });
   }
 };
 
