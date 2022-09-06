@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import ChefImg from "../assets/ChefJuhao.png";
 
 // const pages = ["Home", "Recipes", "New Recipe"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -42,7 +43,9 @@ const Nav = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}> */}
+          <img src={ChefImg} alt="" className="chefImg" />
+          {/* </AdbIcon> */}
           <Typography
             variant="h6"
             noWrap
