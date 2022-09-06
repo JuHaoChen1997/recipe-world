@@ -53,8 +53,12 @@ reviews.put("/:id", async (req, res) => {
 
 //POST
 reviews.post("/", async (req, res) => {
-  const review = await newReview(req.body);
-  res.status(200).json(review);
+  try {
+    const review = await newReview(req.body);
+    res.status(200).json(review);
+  } catch (error) {
+    res.status(404).json("Review cannot posted");
+  }
 });
 
 // DELETE
