@@ -6,8 +6,8 @@ If you are looking for something new with your meal, the best choice is the reci
 
 ## Important Links
 
-- [Deployed API Server]()
-- [Deployed Frontend]()
+- [Deployed API Server](https://warm-bayou-37175.herokuapp.com)
+- [Deployed Frontend](https://recipe-world-app.netlify.app)
 - [Trello Board](https://trello.com/invite/b/WHOxshME/b573f01527cd641c23d23ea20e53df29/fspp-project)
 - [ERD](https://miro.com/app/board/uXjVPZ3W7UU=/?share_link_id=634173605740)
 - [Wireframes](https://wireframe.cc/WRnIoR)
