@@ -72,3 +72,7 @@ npm run db:seed
 # start the server
 nodemon server.js
 ```
+
+## Acknowledgments
+
+Thanks for the Icon Design, [Jossy Pascasio](https://github.com/named-josie).
