@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
 
 const YOUR_SERVICE_ID = process.env.REACT_APP_YOUR_SERVICE_ID;
 const YOUR_TEMPLATE_ID = process.env.REACT_APP_YOUR_TEMPLATE_ID;
@@ -9,6 +10,7 @@ const YOUR_PUBLIC_KEY = process.env.REACT_APP_YOUR_PUBLIC_KEY;
 
 const Mailer = () => {
   const form = useRef();
+  const navigate = useNavigate();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -22,7 +24,7 @@ const Mailer = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          navigate("/recipes");
         },
         (error) => {
           console.log(error.text);
