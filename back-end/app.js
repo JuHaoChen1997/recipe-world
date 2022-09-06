@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const recipeController = require("./controllers/recipeController");
+const { application } = require("express");
 
 //configuration
 const app = express();
@@ -18,6 +19,11 @@ app.get("/", (req, res) => {
 
 //routes of recipes
 app.use("/recipes", recipeController);
+
+//error route
+app.get("*", (req, res) => {
+  res.status(404).json({ success: false, message: "Error!!! Not Found" });
+});
 
 //Export
 module.exports = app;
